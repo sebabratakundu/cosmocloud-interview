@@ -24,10 +24,11 @@ class ApiClient {
     endpoint: string,
     options: {
       page: number
+      perPage: number
     }
   ) {
-    const perPage = 10
-    const offset = perPage * (options.page - 1)
+    const { page, perPage } = options
+    const offset = perPage * (page - 1)
 
     const res = await fetch(
       `${this.baseUrl}${endpoint}?offset=${offset}&limit=${perPage}`,
