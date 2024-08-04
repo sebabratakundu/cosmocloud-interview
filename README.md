@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#">
-    ![image](https://github.com/user-attachments/assets/2c52522d-942c-4a42-9eda-85a4acdb5c97)
+    <img src="https://github.com/user-attachments/assets/2c52522d-942c-4a42-9eda-85a4acdb5c97" alt="ESM" />
   </a>
 </p>
 <h1 align="center">
@@ -25,32 +25,33 @@ You can run EMS locally by following the steps:
 
 1. **Clone the Repo**
 
-    ```bash
-    git clone https://github.com/sebabratakundu/cosmocloud-interview.git
-    ```
+   ```bash
+   git clone https://github.com/sebabratakundu/cosmocloud-interview.git
+   ```
 
 2. **Start your ESM website**
 
    set env variable in `.env.local` file
-   
+
    ```dotenv
    COSMOCLOUD_PROJECT_ID=4234fsdaf
    COSMOCLOUD_ENVIRONMENT_ID=4238fsdfsa
    COSMOCLOUD_API_BASE_URL=https://example.com/api
    ```
 
-    ```bash
-    cd backend
-    pnpm i
-    pnpm husky install
-    pnpm dev
-    ```
+   ```bash
+   cd backend
+   pnpm i
+   pnpm husky install
+   pnpm dev
+   ```
 
 ## What is ESM (Employee Management System)?
 
 ESM is an employee management website built with Next.js and Cosmocloud. ESM enables users to view all the employees, review their details, add new employees to the system, and delete one. fully **CRUD** enabled!
 
 ### Technology Stack
+
 1. Next.js 14
 2. Tailwind CSS - (styling)
 3. Cosmocloud
@@ -62,7 +63,6 @@ ESM is an employee management website built with Next.js and Cosmocloud. ESM ena
    - `/` - all employees page
    - `/:id` - single employee page
    - `/add-employee` - add an employee page
-
 
 ### Features
 
