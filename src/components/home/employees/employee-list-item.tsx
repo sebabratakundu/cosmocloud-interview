@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Employee } from './types'
-import { Button, TCol, TRow } from '../../ui'
+import { IconButton, TCol, TRow } from '../../ui'
+import { Eye } from 'lucide-react'
+import { DeleteEmployee } from './delete-employee-button'
 
 export const EmployeeListItem = ({
   employee,
@@ -12,11 +14,12 @@ export const EmployeeListItem = ({
       <TCol>{employee._id}</TCol>
       <TCol>{employee.name}</TCol>
       <TCol>
-        <Link href={`/${employee._id}`}>
-          <Button>
-            <small>View</small>
-          </Button>
-        </Link>
+        <div className="flex gap-x-2">
+          <Link href={`/${employee._id}`}>
+            <IconButton icon={<Eye size={16} />} />
+          </Link>
+          <DeleteEmployee employeeId={employee._id} />
+        </div>
       </TCol>
     </TRow>
   )

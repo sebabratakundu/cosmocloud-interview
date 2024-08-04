@@ -1,5 +1,5 @@
 export type Employee = {
-  _id: number
+  _id: string
   name: string
   address: {
     line_1: string

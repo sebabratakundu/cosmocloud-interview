@@ -45,6 +45,7 @@ class ApiClient {
     const res = await fetch(`${this.baseUrl}${endpoint}/${id}`, {
       method: 'DELETE',
       headers: this.headers,
+      body: JSON.stringify({}),
     })
 
     return this.formatResponse(res)
@@ -60,7 +61,7 @@ class ApiClient {
 
   private formatResponse(response: Response) {
     if (!response.ok) {
-      return [null, response.body]
+      return [null, response.json()]
     }
 
     return [response.json(), null]
