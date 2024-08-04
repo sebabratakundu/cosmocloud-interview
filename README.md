@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="#">
+    ![image](https://github.com/user-attachments/assets/2c52522d-942c-4a42-9eda-85a4acdb5c97)
+  </a>
+</p>
+<h1 align="center">
+  Employee Management System
+</h1>
+
+<h4 align="center">
+  <a href="#">Website</a>
+</h4>
+
+<p align="center">
+An employee management website.
+</p>
 
 ## Getting Started
 
-First, run the development server:
+### Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node v18.0 or higher.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can run EMS locally by following the steps:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the Repo**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    ```bash
+    git clone https://github.com/sebabratakundu/cosmocloud-interview.git
+    ```
 
-## Learn More
+2. **Start your ESM website**
 
-To learn more about Next.js, take a look at the following resources:
+   set env variable in `.env.local` file
+   
+   ```dotenv
+   COSMOCLOUD_PROJECT_ID=4234fsdaf
+   COSMOCLOUD_ENVIRONMENT_ID=4238fsdfsa
+   COSMOCLOUD_API_BASE_URL=https://example.com/api
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    cd backend
+    pnpm i
+    pnpm husky install
+    pnpm dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## What is ESM (Employee Management System)?
 
-## Deploy on Vercel
+ESM is an employee management website built with Next.js and Cosmocloud. ESM enables users to view all the employees, review their details, add new employees to the system, and delete one. fully **CRUD** enabled!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Technology Stack
+1. Next.js 14
+2. Tailwind CSS - (styling)
+3. Cosmocloud
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Architecture
+
+1. Front-end routes
+
+   - `/` - all employees page
+   - `/:id` - single employee page
+   - `/add-employee` - add an employee page
+
+
+### Features
+
+- View all employees available in our database
+- View employee details page
+- Add a new employee
