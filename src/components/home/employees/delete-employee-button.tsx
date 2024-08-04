@@ -3,7 +3,7 @@
 import { LoaderCircle, Trash } from 'lucide-react'
 import { IconButton } from '../../ui'
 import { deleteEmployee } from '@/src/actions/employee.actions'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { cn } from '@/src/utils/cn'
 

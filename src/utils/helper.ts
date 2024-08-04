@@ -1,6 +1,6 @@
 export const validateInputs = (formData: FormData) => {
   const inputs = Object.fromEntries(formData)
-  let sanitizedInputs = new Map()
+  const sanitizedInputs = new Map()
 
   for (const key in inputs) {
     if (key.includes('$ACTION_')) {

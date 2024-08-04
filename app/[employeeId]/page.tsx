@@ -42,6 +42,6 @@ const Address = ({ address }: { address: object }) => {
 
 const Contact = ({ contact }: { contact: object }) => {
   return Object.entries(contact)
-    .filter(([key, value]) => value)
+    .filter(([, value]) => value)
     .map(([key, value]) => <p key={key}>{`${key}: ${value}`}</p>)
 }

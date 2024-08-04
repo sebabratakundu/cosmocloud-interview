@@ -7,7 +7,7 @@ import { createEmployee } from '@/src/actions/employee.actions'
 import { toast } from 'react-toastify'
 
 export const AddEmployeeForm = ({ children }: PropsWithChildren) => {
-  const [state, submitForm, isPending] = useFormState(createEmployee, {})
+  const [state, submitForm] = useFormState(createEmployee, {})
   const formRef = useRef<HTMLFormElement | null>(null)
 
   useEffect(() => {
