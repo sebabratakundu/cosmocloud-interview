@@ -21,10 +21,6 @@ export const DeleteEmployee = ({ employeeId }: { employeeId: string }) => {
     }
   }
 
-  useEffect(() => {
-    console.log(isLoading)
-  })
-
   return (
     <IconButton
       variant="error"

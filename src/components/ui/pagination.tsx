@@ -11,8 +11,6 @@ export const Pagination = ({
   total: number
   perPage: number
 }) => {
-  console.log(total, perPage, currentPage)
-
   const noOfPages = total > perPage ? Math.ceil(total / perPage) : 1
   const pages = Array.from({ length: noOfPages }, (_, i) => i + 1)
 
@@ -30,7 +28,7 @@ export const Pagination = ({
       )}
       {pages.map((page) => (
         <Link key={page} href={{ pathname: '/', query: { page } }}>
-          <Button className={cn(currentPage !== page && 'bg-indigo-50')}>
+          <Button className={cn(currentPage !== page && 'bg-primary-light')}>
             {page}
           </Button>
         </Link>

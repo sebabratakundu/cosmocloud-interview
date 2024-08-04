@@ -24,6 +24,20 @@ export const getEmployees = async ({
   return data
 }
 
+export const getEmployeeDetailsById = async (id: string) => {
+  const [data, err] = await apiClient.getById('/employees', id)
+
+  if (err) {
+    console.error(err)
+
+    throw new Error(
+      'Something went wrong with fetching employees, please contact your admin!'
+    )
+  }
+
+  return data
+}
+
 export const createEmployee = async (
   prevState: FormData,
   payload: FormData

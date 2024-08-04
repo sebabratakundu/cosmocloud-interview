@@ -3,8 +3,6 @@ export const validateInputs = (formData: FormData) => {
   let sanitizedInputs = new Map()
 
   for (const key in inputs) {
-    console.log(key)
-
     if (key.includes('$ACTION_')) {
       continue
     }

@@ -7,7 +7,7 @@ export const Table = ({
   ...rest
 }: TableHTMLAttributes<HTMLTableElement>) => {
   return (
-    <table className={cn('shadow-md', className)} {...rest}>
+    <table className={cn('shadow-md overflow-auto', className)} {...rest}>
       {children}
     </table>
   )

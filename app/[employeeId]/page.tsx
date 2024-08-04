@@ -1,20 +1,5 @@
-const getEmployeeDetailsById = async (id: string) => {
-  const res = await fetch(
-    `https://free-ap-south-1.cosmocloud.io/development/api/employees/${id}`,
-    {
-      headers: {
-        projectId: process.env.COSMOCLOUD_PROJECT_ID ?? '',
-        environmentId: process.env.COSMOCLOUD_ENVIRONMENT_ID ?? '',
-      },
-    }
-  )
-
-  if (!res.ok) {
-    throw new Error('something went wrong!')
-  }
-
-  return res.json()
-}
+import { getEmployeeDetailsById } from '@/src/actions/employee.actions'
+import { Table, TCol, THead, TRow } from '@/src/components/ui'
 
 export default async function Employee({
   params: { employeeId },
@@ -22,8 +7,41 @@ export default async function Employee({
   params: { employeeId: string }
 }) {
   const employeeDetais = await getEmployeeDetailsById(employeeId)
+  const headers = Object.keys(employeeDetais)
 
-  console.log(employeeDetais)
+  return (
+    <div>
+      <Table>
+        <THead headers={headers} />
+        <tbody>
+          <TRow className="border">
+            <TCol>{employeeDetais._id}</TCol>
+            <TCol>{employeeDetais.name}</TCol>
+            <TCol>
+              <Address address={employeeDetais.address} />
+            </TCol>
+            <TCol>
+              <Contact contact={employeeDetais.contact} />
+            </TCol>
+          </TRow>
+        </tbody>
+      </Table>
+    </div>
+  )
+}
 
-  return <h2>Employee</h2>
+const Address = ({ address }: { address: object }) => {
+  return (
+    <address>
+      {Object.entries(address).map(([key, value]) => (
+        <p key={key}>{`${key}: ${value}`}</p>
+      ))}
+    </address>
+  )
+}
+
+const Contact = ({ contact }: { contact: object }) => {
+  return Object.entries(contact)
+    .filter(([key, value]) => value)
+    .map(([key, value]) => <p key={key}>{`${key}: ${value}`}</p>)
 }
